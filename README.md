@@ -1,4 +1,4 @@
-# Welcome to Weather App
+# Welcome to Weather App :sun_behind_small_cloud:
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
