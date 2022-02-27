@@ -37,7 +37,7 @@ export const Forecast: React.FC<IForecastProps> = () => {
   }
 
   if (weekly.length === 0) {
-    return <EmptyListMessage emptyListMessage={locationName && weekly.length === 0 ? 'No results found' : 'Please enter a location'} />;
+    return <EmptyListMessage emptyListMessage={locationName ? 'No results found' : 'Please enter a location'} />;
   }
 
   return (
