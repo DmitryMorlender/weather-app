@@ -1,4 +1,5 @@
 import React from 'react';
+import { TailSpin } from 'react-loader-spinner';
 import { MinMaxTemperature } from '../../../../components/min-max-temperature/min-max-temperature.component';
 import { Temperature } from '../../../../components/temparture/temparture.component';
 import { WeatherIcon } from '../../../../components/weather-icon/weather-icon.component';
@@ -6,7 +7,6 @@ import { useGetLocationWeatherForecast } from './hooks/useGetLocationWeatherFore
 import { WeatherCaption } from '../weather-caption/weather-caption.component';
 import { EmptyListMessage, ErrorMessage, Forcast, Icon, LoaderContainer, Primary, Secondary, WeatherIconAndTemperature, WeekDay, Weekly } from './forecast.styles';
 import { useWeather } from '../../context';
-import { TailSpin } from 'react-loader-spinner';
 
 interface IForecastProps {}
 export const Forecast: React.FC<IForecastProps> = () => {
