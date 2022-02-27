@@ -29,10 +29,13 @@ export const useCurrentLocation = () => {
     }
   });
 
-  const handleSuccess = React.useCallback((position: GeolocationPosition) => {
-    const { latitude, longitude } = position.coords;
-    dispatch({ type: 'SET_LOCATION', payload: { latitude, longitude } });
-  }, []);
+  const handleSuccess = React.useCallback(
+    (position: GeolocationPosition) => {
+      const { latitude, longitude } = position.coords;
+      dispatch({ type: 'SET_LOCATION', payload: { latitude, longitude } });
+    },
+    [dispatch]
+  );
 
   React.useEffect(() => {
     // If the geolocation is not defined in the used browser you can handle it as an error
