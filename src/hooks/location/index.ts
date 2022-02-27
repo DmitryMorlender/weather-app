@@ -29,6 +29,11 @@ export const useCurrentLocation = () => {
     }
   });
 
+  const handleSuccess = React.useCallback((position: GeolocationPosition) => {
+    const { latitude, longitude } = position.coords;
+    dispatch({ type: 'SET_LOCATION', payload: { latitude, longitude } });
+  }, []);
+
   React.useEffect(() => {
     // If the geolocation is not defined in the used browser you can handle it as an error
     if (!navigator.geolocation) {
@@ -36,12 +41,7 @@ export const useCurrentLocation = () => {
       return;
     }
     navigator.geolocation.getCurrentPosition(handleSuccess, handleError);
-  }, []);
-
-  const handleSuccess = (position: GeolocationPosition) => {
-    const { latitude, longitude } = position.coords;
-    dispatch({ type: 'SET_LOCATION', payload: { latitude, longitude } });
-  };
+  }, [handleSuccess]);
 
   const handleError = ({ code, message }: GeolocationPositionError) => {
     setError({ code, message });

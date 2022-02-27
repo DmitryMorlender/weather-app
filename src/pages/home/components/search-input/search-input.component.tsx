@@ -18,9 +18,12 @@ export const SearchInput: React.FC<ISearchInputProps> = () => {
   React.useEffect(() => {
     setSearchTerm(state.locationName);
   }, [state.locationName]);
-  useOutsideAlerter(searchRef, () => {
+
+  const outsideAlerterHandler = React.useCallback(() => {
     setShowSuggestions(false);
-  });
+  }, []);
+
+  useOutsideAlerter(searchRef, outsideAlerterHandler);
 
   const [showSuggestions, setShowSuggestions] = React.useState(false);
   const { suggestions, loadingSuggestions, fetchingSuggestions, suggestionsError } = useGetLocationSuggestions(debouncedSearchTerm);

@@ -22,5 +22,5 @@ export function useOutsideAlerter(ref: React.RefObject<HTMLDivElement>, handler?
         document.removeEventListener('mousedown', handleClickOutside);
       };
     }
-  }, [ref]);
+  }, [ref, handler]);
 }
