@@ -10,7 +10,7 @@ interface IHomeProps {}
 export const Home: React.FC<IHomeProps> = () => {
   useCurrentLocation();
 
-  const { photo, loadingPhoto, photoError, fetchingPhoto } = useGetLocationPhoto();
+  const { photo } = useGetLocationPhoto();
 
   return (
     <Container>

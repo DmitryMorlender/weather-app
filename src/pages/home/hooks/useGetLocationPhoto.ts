@@ -5,8 +5,7 @@ import { useWeather } from '../context';
 
 export const useGetLocationPhoto = () => {
   const {
-    state: { location },
-    dispatch
+    state: { location }
   } = useWeather();
   const [backgroundImageUrl, setBackgroundImageUrl] = React.useState({ isReady: false, src: '' });
 
