@@ -4,8 +4,7 @@ import { useWeather } from '../../../context';
 
 export const useGetLocationWeatherForecast = () => {
   const {
-    state: { location, locationName, temperatureUnit },
-    dispatch
+    state: { location, locationName, temperatureUnit }
   } = useWeather();
 
   const { data, isLoading, isFetching, isError } = useQuery(
@@ -18,5 +17,5 @@ export const useGetLocationWeatherForecast = () => {
     }
   );
 
-  return { forecastData: { timeZoneOffset: data?.timezone_offset, current: data?.current, weekly: data?.daily }, loadingForecase: isLoading, fetchingForecase: isFetching, forecaseError: isError };
+  return { forecastData: { current: data?.current, weekly: data?.daily }, loadingForecase: isLoading, fetchingForecase: isFetching, forecaseError: isError };
 };

@@ -1,6 +1,5 @@
 import React from 'react';
-import { TailSpin } from 'react-loader-spinner';
-import { GeocodingAPI, GeocodingAPIResponse } from '../../../../types';
+import { GeocodingAPI } from '../../../../types';
 import { ResultItem } from './search-results.styles';
 
 interface ISearchResultsProps {

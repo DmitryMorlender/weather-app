@@ -1,7 +1,6 @@
 import { useQuery } from 'react-query';
 import { getCities } from '../../../../../services/api/methods';
 import { GeocodingAPIResponse } from '../../../types';
-import { debounce } from 'lodash';
 
 const getCitiesDebounced = (searchTerm: string) => getCities(searchTerm || '');
 

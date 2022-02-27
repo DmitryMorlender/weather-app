@@ -11,9 +11,8 @@ import { useWeather } from '../../context';
 interface IForecastProps {}
 export const Forecast: React.FC<IForecastProps> = () => {
   const {
-    forecastData: { timeZoneOffset = 0, current, weekly = [] },
+    forecastData: { current, weekly = [] },
     loadingForecase,
-    fetchingForecase,
     forecaseError
   } = useGetLocationWeatherForecast();
   const {

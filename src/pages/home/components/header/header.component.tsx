@@ -3,7 +3,6 @@ import { useWeather } from '../../context';
 import { SearchInput } from '../search-input/search-input.component';
 import { TimeAndDate } from '../time-and-date/time-and-date.component';
 import { Wrapper } from './header.styles';
-import { RiCelsiusFill, RiFahrenheitFill } from 'react-icons/ri';
 import { Switch } from '../../../../components/switch/switch.component';
 
 interface IHeaderProps {}

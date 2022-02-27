@@ -8,7 +8,7 @@ export const useCurrentLocation = () => {
   const [error, setError] = React.useState<{ code: number; message: string } | null>(null);
   const { state, dispatch } = useWeather();
 
-  const response = useQuery('coordsToLocation', () => getCurrentCountry({ lat: state.location?.latitude, lon: state.location?.longitude }), {
+  useQuery('coordsToLocation', () => getCurrentCountry({ lat: state.location?.latitude, lon: state.location?.longitude }), {
     enabled: !!state.location,
     refetchOnWindowFocus: false,
     retry: false,
