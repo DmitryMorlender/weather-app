@@ -2,7 +2,7 @@ import React from 'react';
 import { useWeather } from '../../context';
 import { SearchInput } from '../search-input/search-input.component';
 import { TimeAndDate } from '../time-and-date/time-and-date.component';
-import { Wrapper } from './header.styles';
+import { InputContainer, Wrapper } from './header.styles';
 import { Switch } from '../../../../components/switch/switch.component';
 
 interface IHeaderProps {}
@@ -14,17 +14,10 @@ export const Header: React.FC<IHeaderProps> = () => {
   return (
     <Wrapper>
       <TimeAndDate />
-
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          gap: '1.5rem',
-          flexWrap: 'wrap'
-        }}>
+      <InputContainer>
         <SearchInput />
-        <Switch isChecked={temperatureUnit === 'CELSIUS'} onChange={() => dispatch({ type: 'TOGGLE_TEMPERATURE', payload: temperatureUnit === 'CELSIUS' ? 'FAHRENHEIT' : 'CELSIUS' })} />
-      </div>
+        <Switch checked={temperatureUnit === 'CELSIUS'} onChange={() => dispatch({ type: 'TOGGLE_TEMPERATURE', payload: temperatureUnit === 'CELSIUS' ? 'FAHRENHEIT' : 'CELSIUS' })} />
+      </InputContainer>
     </Wrapper>
   );
 };

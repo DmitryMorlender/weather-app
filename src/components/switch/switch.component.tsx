@@ -1,13 +1,13 @@
 import React from 'react';
 import { RiCelsiusFill, RiFahrenheitFill } from 'react-icons/ri';
-import ReactSwitch from 'react-switch';
+import ReactSwitch, { ReactSwitchProps } from 'react-switch';
 import { HandleIcon } from './switch.styles';
 
-interface ISwitchProps {
+interface ISwitchProps extends ReactSwitchProps {
   onChange: (checked: boolean, event: MouseEvent | React.SyntheticEvent<MouseEvent | KeyboardEvent, Event>, id: string) => void;
-  isChecked?: boolean;
+  checked: boolean;
 }
-export const Switch: React.FC<ISwitchProps> = ({ isChecked = false, onChange }) => {
+export const Switch: React.FC<ISwitchProps> = ({ checked = false, onChange, ...props }) => {
   return (
     <ReactSwitch
       offColor="#000"
@@ -22,10 +22,11 @@ export const Switch: React.FC<ISwitchProps> = ({ isChecked = false, onChange }) 
           <RiCelsiusFill size={20} />
         </HandleIcon>
       }
-      checked={isChecked}
+      checked={checked}
       onChange={onChange}
       uncheckedIcon={false}
       checkedIcon={false}
+      {...props}
     />
   );
 };

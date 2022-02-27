@@ -1,4 +1,4 @@
-import styled from "@emotion/styled";
+import styled from '@emotion/styled';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -13,4 +13,11 @@ export const Wrapper = styled.div`
   @media (min-width: 501px) {
     align-items: center;
   }
+`;
+
+export const InputContainer = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
 `;
