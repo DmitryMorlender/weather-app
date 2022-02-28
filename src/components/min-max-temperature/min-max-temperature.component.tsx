@@ -11,7 +11,7 @@ export const MinMaxTemperature: React.FC<IMinMaxTemperatureProps> = ({ min, sepe
     <Wrapper className="temp-wrapper">
       {min}
       {seperator ? seperator : null}
-      {max ? max : max}
+      {max ? max : null}
     </Wrapper>
   );
 };
